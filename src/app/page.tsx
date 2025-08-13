@@ -2,34 +2,70 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Star, MapPin, Clock, Phone, Award, Users, Zap, Mail, CircleDot, Waves, Home, Target, Settings } from "lucide-react"
-import { ServiceAreasDropdown } from "@/components/ui/service-areas-dropdown"
+import { ArrowRight, MapPin, Phone, Clock, CheckCircle, Star, Home, Menu, X, Mail, CircleDot, Waves, Zap, Target, Settings, Award, Users } from "lucide-react"
 import Link from "next/link"
 import AIConcierge from "@/components/sections/ai-concierge"
+import { ServiceAreasDropdown } from "@/components/ui/service-areas-dropdown"
+import { useState } from "react"
 
 export default function HomePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-charcoal text-off-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-charcoal/90 backdrop-blur-md border-b border-brass/20">
-        <div className="container mx-auto px-6 py-4">
+      <nav className="fixed top-0 w-full z-50 bg-charcoal backdrop-blur-md border-b border-brass/20">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-serif font-bold text-brass hover:text-brass/80 transition-colors">
+            <Link href="/" className="text-lg sm:text-xl lg:text-2xl font-serif font-bold text-brass hover:text-brass/80 transition-colors">
               Backyard Funhouse
             </Link>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/courts" className="hover:text-brass transition-colors">Courts</Link>
-              <Link href="/pools" className="hover:text-brass transition-colors">Pools</Link>
-              <Link href="/trampolines" className="hover:text-brass transition-colors">Trampolines</Link>
-              <Link href="/playhouses" className="hover:text-brass transition-colors">Playhouses</Link>
-              <Link href="/greens" className="hover:text-brass transition-colors">Putting Greens</Link>
-              <Link href="/gallery" className="hover:text-brass transition-colors">Gallery</Link>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+              <Link href="/courts" className="hover:text-brass transition-colors text-sm lg:text-base">Courts</Link>
+              <Link href="/pools" className="hover:text-brass transition-colors text-sm lg:text-base">Pools</Link>
+              <Link href="/trampolines" className="hover:text-brass transition-colors text-sm lg:text-base">Trampolines</Link>
+              <Link href="/playhouses" className="hover:text-brass transition-colors text-sm lg:text-base">Playhouses</Link>
+              <Link href="/greens" className="hover:text-brass transition-colors text-sm lg:text-base">Putting Greens</Link>
+              <Link href="/gallery" className="hover:text-brass transition-colors text-sm lg:text-base">Gallery</Link>
               <ServiceAreasDropdown />
-              <Button variant="luxury" size="lg">
-                Book Consultation
-              </Button>
+              <a href="https://calendly.com/gobegreat124?background_color=0f1115&text_color=f4f4f2&primary_color=d6b26e" target="_blank" rel="noopener noreferrer">
+                <Button variant="luxury" size="sm" className="text-sm">
+                  Book Consultation
+                </Button>
+              </a>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-brass hover:text-brass/80 transition-colors"
+              aria-label="Toggle mobile menu"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t border-brass/20">
+              <div className="flex flex-col space-y-4 pt-4">
+                <Link href="/courts" className="text-off-white hover:text-brass transition-colors py-2 text-base" onClick={() => setMobileMenuOpen(false)}>Courts</Link>
+                <Link href="/pools" className="text-off-white hover:text-brass transition-colors py-2 text-base" onClick={() => setMobileMenuOpen(false)}>Pools</Link>
+                <Link href="/trampolines" className="text-off-white hover:text-brass transition-colors py-2 text-base" onClick={() => setMobileMenuOpen(false)}>Trampolines</Link>
+                <Link href="/playhouses" className="text-off-white hover:text-brass transition-colors py-2 text-base" onClick={() => setMobileMenuOpen(false)}>Playhouses</Link>
+                <Link href="/greens" className="text-off-white hover:text-brass transition-colors py-2 text-base" onClick={() => setMobileMenuOpen(false)}>Putting Greens</Link>
+                <Link href="/gallery" className="text-off-white hover:text-brass transition-colors py-2 text-base" onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
+                <Link href="/service-areas" className="text-off-white hover:text-brass transition-colors py-2 text-base" onClick={() => setMobileMenuOpen(false)}>Service Areas</Link>
+                <a href="https://calendly.com/gobegreat124?background_color=0f1115&text_color=f4f4f2&primary_color=d6b26e" target="_blank" rel="noopener noreferrer" className="pt-2">
+                  <Button variant="luxury" size="sm" className="w-full" onClick={() => setMobileMenuOpen(false)}>
+                    Book Consultation
+                  </Button>
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 

@@ -2,13 +2,14 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Filter, MapPin, Calendar, Star } from "lucide-react"
+import { ArrowRight, Filter, MapPin, Calendar, Star, Menu, X } from "lucide-react"
 import Link from "next/link"
 import AIConcierge from "@/components/sections/ai-concierge"
 import { useState } from "react"
 
 export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState('all')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // Filter projects based on active filter
   const filteredProjects = featuredProjects.filter(project => {

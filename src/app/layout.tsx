@@ -28,6 +28,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  themeColor: '#0f1115',
   openGraph: {
     title: 'Backyard Funhouse | Luxury Outdoor Builds in DFW',
     description: 'Ultra-premium custom basketball courts, pools, trampolines, playhouses, and putting greens for Dallas-Fort Worth luxury homes and estates.',
