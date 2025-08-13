@@ -94,20 +94,20 @@ export default function AIConcierge() {
     <>
       {/* Floating Chat Button */}
       <motion.div
-        className="fixed bottom-6 right-6 z-50"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 2, type: "spring", stiffness: 260, damping: 20 }}
       >
         <Button
           onClick={() => setIsOpen(true)}
-          className="w-16 h-16 rounded-full bg-brass hover:bg-brass/90 text-charcoal shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-brass hover:bg-brass/90 text-charcoal shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
           size="lg"
         >
           <div className="relative">
-            <Brain className="h-8 w-8" />
-            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald rounded-full border-2 border-brass flex items-center justify-center">
-              <MessageCircle className="h-2 w-2 text-white" />
+            <Brain className="h-6 w-6 sm:h-8 sm:w-8" />
+            <div className="absolute -bottom-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-emerald rounded-full border-2 border-brass flex items-center justify-center">
+              <MessageCircle className="h-1.5 w-1.5 sm:h-2 sm:w-2 text-white" />
             </div>
           </div>
         </Button>

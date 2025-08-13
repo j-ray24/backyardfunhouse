@@ -27,13 +27,13 @@ export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-charcoal text-off-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-charcoal/90 backdrop-blur-md border-b border-brass/20">
-        <div className="container mx-auto px-6 py-4">
+      <nav className="fixed top-0 w-full z-50 bg-charcoal/95 backdrop-blur-md border-b border-brass/20">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-serif font-bold text-brass">
+            <Link href="/" className="text-lg sm:text-xl lg:text-2xl font-serif font-bold text-brass">
               Backyard Funhouse
             </Link>
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               <Link href="/courts" className="hover:text-brass transition-colors">Courts</Link>
               <Link href="/pools" className="hover:text-brass transition-colors">Pools</Link>
               <Link href="/trampolines" className="hover:text-brass transition-colors">Trampolines</Link>
@@ -52,23 +52,23 @@ export default function GalleryPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 bg-charcoal">
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-emerald/10 to-charcoal/90"></div>
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 py-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-4 sm:mb-6 leading-tight">
             Project
             <span className="text-brass block">Gallery</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-off-white/80 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-off-white/80 max-w-2xl mx-auto leading-relaxed">
             Explore our portfolio of luxury outdoor builds across the DFW metroplex. 
             From championship courts to resort-style pools, see the Backyard Funhouse difference.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="luxury" size="xl" className="group">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
+            <Button variant="luxury" size="xl" className="group w-full sm:w-auto min-h-[48px] text-base sm:text-lg font-semibold">
               View All Projects
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="luxury-outline" size="xl">
+            <Button variant="luxury-outline" size="xl" className="w-full sm:w-auto min-h-[48px] text-base sm:text-lg font-semibold">
               Filter by Service
             </Button>
           </div>
@@ -76,14 +76,14 @@ export default function GalleryPage() {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 bg-off-white text-charcoal border-b border-brass/20">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-4">
+      <section className="py-8 sm:py-10 lg:py-12 bg-off-white text-charcoal border-b border-brass/20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4">
             <Button 
               variant={activeFilter === 'all' ? 'luxury' : 'outline'} 
               size="sm"
               onClick={() => setActiveFilter('all')}
-              className={activeFilter === 'all' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}
+              className={`min-h-[40px] text-xs sm:text-sm font-medium px-3 sm:px-4 ${activeFilter === 'all' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}`}
             >
               All Projects
             </Button>
@@ -91,7 +91,7 @@ export default function GalleryPage() {
               variant={activeFilter === 'courts' ? 'luxury' : 'outline'} 
               size="sm"
               onClick={() => setActiveFilter('courts')}
-              className={activeFilter === 'courts' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}
+              className={`min-h-[40px] text-xs sm:text-sm font-medium px-3 sm:px-4 ${activeFilter === 'courts' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}`}
             >
               Basketball Courts
             </Button>
@@ -99,7 +99,7 @@ export default function GalleryPage() {
               variant={activeFilter === 'pools' ? 'luxury' : 'outline'} 
               size="sm"
               onClick={() => setActiveFilter('pools')}
-              className={activeFilter === 'pools' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}
+              className={`min-h-[40px] text-xs sm:text-sm font-medium px-3 sm:px-4 ${activeFilter === 'pools' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}`}
             >
               Custom Pools
             </Button>
@@ -107,7 +107,7 @@ export default function GalleryPage() {
               variant={activeFilter === 'trampolines' ? 'luxury' : 'outline'} 
               size="sm"
               onClick={() => setActiveFilter('trampolines')}
-              className={activeFilter === 'trampolines' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}
+              className={`min-h-[40px] text-xs sm:text-sm font-medium px-3 sm:px-4 ${activeFilter === 'trampolines' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}`}
             >
               Trampolines
             </Button>
@@ -115,7 +115,7 @@ export default function GalleryPage() {
               variant={activeFilter === 'playhouses' ? 'luxury' : 'outline'} 
               size="sm"
               onClick={() => setActiveFilter('playhouses')}
-              className={activeFilter === 'playhouses' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}
+              className={`min-h-[40px] text-xs sm:text-sm font-medium px-3 sm:px-4 ${activeFilter === 'playhouses' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}`}
             >
               Playhouses
             </Button>
@@ -123,7 +123,7 @@ export default function GalleryPage() {
               variant={activeFilter === 'greens' ? 'luxury' : 'outline'} 
               size="sm"
               onClick={() => setActiveFilter('greens')}
-              className={activeFilter === 'greens' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}
+              className={`min-h-[40px] text-xs sm:text-sm font-medium px-3 sm:px-4 ${activeFilter === 'greens' ? 'bg-brass text-charcoal' : 'border-brass text-brass hover:bg-brass hover:text-charcoal'}`}
             >
               Putting Greens
             </Button>

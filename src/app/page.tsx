@@ -34,36 +34,36 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-charcoal text-off-white">
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/90 to-emerald/20"></div>
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 py-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-4 sm:mb-6 leading-tight">
             Luxury Outdoor Builds for
             <span className="text-brass block">DFW Estates</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-off-white/80 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-off-white/80 max-w-2xl mx-auto leading-relaxed">
             Ultra-premium custom basketball courts, pools, trampolines, playhouses, and putting greens. 
             White-glove design-build with 3D previews and lifetime quality.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
             <a 
               href="https://calendly.com/gobegreat124?background_color=0f1115&text_color=f4f4f2&primary_color=d6b26e" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block"
+              className="inline-block w-full sm:w-auto"
             >
               <Button 
                 variant="luxury" 
                 size="xl" 
-                className="group cursor-pointer w-full"
+                className="group cursor-pointer w-full min-h-[48px] text-base sm:text-lg font-semibold"
                 type="button"
               >
                 Start Your Design
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
-            <Link href="/gallery">
-              <Button variant="luxury-outline" size="xl">
+            <Link href="/gallery" className="w-full sm:w-auto">
+              <Button variant="luxury-outline" size="xl" className="w-full min-h-[48px] text-base sm:text-lg font-semibold">
                 View Gallery
               </Button>
             </Link>
@@ -72,36 +72,35 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-off-white text-charcoal">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+      <section className="py-12 sm:py-16 lg:py-20 bg-off-white text-charcoal">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-3 sm:mb-4">
               Luxury Outdoor Experiences
             </h2>
-            <p className="text-xl text-charcoal/70 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-charcoal/70 max-w-2xl mx-auto px-2">
               From championship courts to resort-style pools, we create extraordinary outdoor spaces 
               that elevate your property and lifestyle.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-brass/20">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-brass/10 rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="h-6 w-6 text-brass" />
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-brass/20 bg-white">
+                <CardHeader className="pb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brass/10 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                    <service.icon className="h-5 w-5 sm:h-6 sm:w-6 text-brass" />
                   </div>
-                  <CardTitle className="text-2xl font-serif">{service.title}</CardTitle>
-                  <CardDescription className="text-charcoal/70">
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl font-serif leading-tight">{service.title}</CardTitle>
+                  <CardDescription className="text-sm sm:text-base text-charcoal/70 leading-relaxed">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-
+                <CardContent className="pt-0">
                   <Link href={service.href}>
-                    <Button variant="outline" className="w-full group">
+                    <Button variant="outline" className="w-full group min-h-[44px] text-sm sm:text-base font-medium">
                       Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                 </CardContent>
@@ -112,25 +111,25 @@ export default function HomePage() {
       </section>
 
       {/* Service Areas */}
-      <section className="py-20 bg-charcoal">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-off-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-charcoal">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-3 sm:mb-4 text-off-white">
               Serving DFW Metro
             </h2>
-            <p className="text-xl text-off-white/70 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-off-white/70 max-w-2xl mx-auto px-2">
               Proudly serving luxury homes and estates across the Dallas-Fort Worth metroplex.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
             {serviceAreas.map((area, index) => {
               const citySlug = area.toLowerCase().replace(/\s+/g, '-')
               return (
                 <Link key={index} href={`/service-areas/${citySlug}`}>
-                  <div className="bg-off-white/5 border border-brass/20 rounded-lg p-6 text-center hover:bg-off-white/10 transition-colors cursor-pointer hover:border-brass/40 hover:scale-105 transform transition-all duration-200">
-                    <MapPin className="h-6 w-6 text-brass mx-auto mb-2" />
-                    <h3 className="font-semibold text-off-white">{area}</h3>
+                  <div className="bg-off-white/5 border border-brass/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center hover:bg-off-white/10 transition-colors cursor-pointer hover:border-brass/40 hover:scale-105 transform transition-all duration-200 min-h-[80px] sm:min-h-[90px] flex flex-col justify-center">
+                    <MapPin className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-brass mx-auto mb-1 sm:mb-2" />
+                    <h3 className="font-semibold text-off-white text-xs sm:text-sm lg:text-base leading-tight">{area}</h3>
                   </div>
                 </Link>
               )
