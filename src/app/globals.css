@@ -27,6 +27,19 @@
     --radius: 0.5rem;
   }
 
+  /* Force charcoal background everywhere to eliminate yellow */
+  html, body {
+    background-color: #0f1115 !important;
+    color: #f4f4f2;
+  }
+
+  /* Mobile status bar area fix */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      background-color: #0f1115 !important;
+    }
+  }
+
   .dark {
     --background: 15 17 21;
     --foreground: 244 244 242;

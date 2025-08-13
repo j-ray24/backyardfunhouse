@@ -72,12 +72,12 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-charcoal text-off-white">
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/90 to-emerald/20"></div>
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 py-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-4 sm:mb-6 leading-tight">
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 sm:mb-8 leading-tight">
             Luxury Outdoor Builds for
             <span className="text-brass block">DFW Estates</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-off-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl mb-8 sm:mb-10 text-off-white/80 max-w-2xl mx-auto leading-relaxed">
             Ultra-premium custom basketball courts, pools, trampolines, playhouses, and putting greens. 
             White-glove design-build with 3D previews and lifetime quality.
           </p>

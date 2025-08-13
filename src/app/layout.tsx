@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
+import AIConcierge from '@/components/sections/ai-concierge'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -34,6 +35,12 @@ export const metadata: Metadata = {
     maximumScale: 1,
   },
   themeColor: '#0f1115',
+  other: {
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'msapplication-navbutton-color': '#0f1115',
+    'msapplication-TileColor': '#0f1115',
+  },
   openGraph: {
     title: 'Backyard Funhouse | Luxury Outdoor Builds in DFW',
     description: 'Ultra-premium custom basketball courts, pools, trampolines, playhouses, and putting greens for Dallas-Fort Worth luxury homes and estates.',
@@ -76,8 +83,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className={`${inter.className} antialiased`}>
-        {children}
+      <body className="font-sans antialiased bg-charcoal text-off-white">
+        <div className="min-h-screen bg-charcoal">
+          {children}
+          <AIConcierge />
+        </div>
       </body>
     </html>
   )
