@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 244 244 242;
+    --foreground: 15 17 21;
+    --card: 244 244 242;
+    --card-foreground: 15 17 21;
+    --popover: 244 244 242;
+    --popover-foreground: 15 17 21;
+    --primary: 214 178 110;
+    --primary-foreground: 15 17 21;
+    --secondary: 11 165 122;
+    --secondary-foreground: 244 244 242;
+    --muted: 229 229 227;
+    --muted-foreground: 82 82 82;
+    --accent: 229 229 227;
+    --accent-foreground: 15 17 21;
+    --destructive: 239 68 68;
+    --destructive-foreground: 244 244 242;
+    --border: 214 214 212;
+    --input: 214 214 212;
+    --ring: 214 178 110;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 15 17 21;
+    --foreground: 244 244 242;
+    --card: 15 17 21;
+    --card-foreground: 244 244 242;
+    --popover: 15 17 21;
+    --popover-foreground: 244 244 242;
+    --primary: 214 178 110;
+    --primary-foreground: 15 17 21;
+    --secondary: 11 165 122;
+    --secondary-foreground: 244 244 242;
+    --muted: 38 38 38;
+    --muted-foreground: 163 163 163;
+    --accent: 38 38 38;
+    --accent-foreground: 244 244 242;
+    --destructive: 127 29 29;
+    --destructive-foreground: 244 244 242;
+    --border: 38 38 38;
+    --input: 38 38 38;
+    --ring: 214 178 110;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6b26e;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c4a05c;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Brand typography */
+.heading-serif {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.body-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Luxury animations */
+.luxury-fade-in {
+  animation: luxuryFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes luxuryFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(244, 244, 242, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(244, 244, 242, 0.2);
+}
+
+/* Gradient overlays */
+.gradient-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 17, 21, 0.8) 0%,
+    rgba(15, 17, 21, 0.4) 100%
+  );
+}
