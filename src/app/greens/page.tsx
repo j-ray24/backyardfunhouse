@@ -94,7 +94,7 @@ export default function GreensPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="w-full group">
+                  <Button variant="luxury" className="w-full group">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>

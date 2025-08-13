@@ -14,9 +14,9 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-charcoal text-off-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-charcoal backdrop-blur-md border-b border-brass/20">
-        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
-          <div className="flex items-center justify-between">
+      <nav className="bg-charcoal/95 backdrop-blur-sm border-b border-brass/20 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
             <Link href="/" className="text-lg sm:text-xl lg:text-2xl font-serif font-bold text-brass hover:text-brass/80 transition-colors">
               Backyard Funhouse
             </Link>
@@ -134,7 +134,7 @@ export default function HomePage() {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <Link href={service.href}>
-                    <Button variant="outline" className="w-full group min-h-[44px] text-sm sm:text-base font-medium">
+                    <Button variant="luxury" className="w-full group min-h-[44px] text-sm sm:text-base font-medium">
                       Learn More
                       <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
